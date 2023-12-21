@@ -1,0 +1,124 @@
+{
+  "name": "blockoli",
+  "version": "2.1.0",
+  "description": "Blockoli is a block coding editor for Arduino.",
+  "main": "main/main.js",
+  "scripts": {
+    "start-webpack": "SET \"NODE_ENV=develop\" && webpack --config config/webpack.dev.js && electron .",
+    "start": "SET \"NODE_ENV=develop\" && electron .",
+    "publish": "SET \"NODE_ENV=production\" && electron-builder --win -p always",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "webpack --config config/webpack.electron.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-bp/blockoli-win.git"
+  },
+  "author": {
+    "url": "https://pf.kakao.com/_CBvNxb/chat",
+    "name": "BP LAB",
+    "email": "bpcode@naver.com"
+  },
+  "contributes": {
+    "name": "Hwang bomee",
+    "email": "hwangbomee@kakao.com"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/i18next": "^13.0.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-i18next": "^8.1.0",
+    "@types/react-redux": "^7.1.26",
+    "@types/react-router-dom": "^5.3.3",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.25.0",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "dotenv-webpack": "^8.0.1",
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.13",
+    "electron-reload": "^2.0.0-alpha.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.54.8",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "typescript": "^4.8.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.2",
+    "@emotion/styled": "^11.11.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@sentry/react": "^7.76.0",
+    "@sentry/webpack-plugin": "^2.9.0",
+    "@serialport/parser-readline": "^9.2.4",
+    "@types/codemirror": "^5.60.10",
+    "@uiw/codemirror-theme-eclipse": "^4.21.13",
+    "axios": "^1.5.0",
+    "codemirror": "^6.0.1",
+    "electron-log": "^4.4.6",
+    "electron-prompt": "^1.7.0",
+    "electron-updater": "^4.3.9",
+    "express": "^4.18.2",
+    "i18next": "^23.4.5",
+    "ini": "^3.0.0",
+    "net": "^1.0.2",
+    "node-static": "^0.7.11",
+    "object-path": "^0.11.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
+    "redux": "^4.2.1",
+    "serialport": "^9.2.8",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "thememirror": "^2.0.1",
+    "typesafe-actions": "^5.1.0"
+  },
+  "build": {
+    "productName": "Blockoli",
+    "appId": "com.github.team-bp.blockoli-win",
+    "asar": false,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "team-bp",
+        "repo": "blockoli-win"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "./electron-dist/favicon.ico"
+    },
+    "nsis": {
+      "createDesktopShortcut": "always",
+      "oneClick": true,
+      "perMachine": true,
+      "language": 1042,
+      "include": "installer.nsh"
+    },
+    "directories": {
+      "output": "./dist/"
+    },
+    "files": [
+      "!.vscode${/*}"
+    ]
+  }
+}
