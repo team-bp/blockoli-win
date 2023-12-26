@@ -64,6 +64,7 @@
     "@codemirror/lang-cpp": "^6.0.2",
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "@sentry/electron": "^4.15.1",
     "@sentry/react": "^7.76.0",
     "@sentry/webpack-plugin": "^2.9.0",
     "@serialport/parser-readline": "^9.2.4",
