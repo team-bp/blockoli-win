@@ -97,6 +97,12 @@
     "productName": "Blockoli",
     "appId": "com.github.team-bp.blockoli-win",
     "asar": false,
+    "protocols": {
+      "name": "electron-blockoli",
+      "schemes": [
+        "electron-blockoli"
+      ]
+    },
     "publish": [
       {
         "provider": "github",
